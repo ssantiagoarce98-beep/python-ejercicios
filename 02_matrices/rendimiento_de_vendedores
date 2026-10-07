@@ -1,0 +1,17 @@
+for i in range(len(vendedores)):
+        print (vendedores[i])
+        print ("Total de ventas: ", sum(ventas[i]))
+        print ("Promedio de ventas: ", sum(ventas[i])/len(ventas[i]))
+        for j in range(len(meses)):
+            print (meses[j], ":", ventas[i][j])
+    vendedores_destacados=[]
+    for i in range(len(vendedores)):
+        meses_buenos=0
+        for j in range(len(meses)):
+            if ventas[i][j]>150:
+                meses_buenos+=1
+        promedio=sum(ventas[i])/len(ventas[i])
+        if promedio>=170:
+            vendedores_destacados.append(vendedores[i])
+        print ("Vendedor: ", vendedores[i], "Meses con ventas mayores a 150: ", meses_buenos)
+    print ("Vendedores destacados: ", vendedores_destacados)
