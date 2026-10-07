@@ -1,0 +1,19 @@
+def analisis_de_vendedores(vendedores):
+    contador_destado=0
+    mayor_venta=vendedores[0]["ventas"][0]
+    nombre_mayor_venta=vendedores[0]["nombre"]
+    for i in range(len(vendedores)):
+        promedio=sum(vendedores[i]["ventas"])/len(vendedores[i]["ventas"])
+        print (vendedores[i]["nombre"],"- Sector -->",vendedores[i]["sector"])
+        for j in range(len(vendedores[i]["ventas"])):
+            print ("Venta",j+1,":",vendedores[i]["ventas"][j])
+            if mayor_venta<vendedores[i]["ventas"][j]:
+                mayor_venta=vendedores[i]["ventas"][j]
+                nombre_mayor_venta=vendedores[i]["nombre"]
+        print ("Total vendido:",sum(vendedores[i]["ventas"]))
+        print ("Promedio:", sum(vendedores[i]["ventas"])/len(vendedores[i]["ventas"])
+        if promedio>=150000:
+            print  ("vendedor destacado")
+            contador_destado+=1
+    print ("Cantidad de vendedores destacados:",contador_destado)
+    print ("El que mas vendio",nombre_mayor_venta, "con un monto de", mayor_venta)
